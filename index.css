@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;   /* change from min-height to height */
+  padding: 0;
+}
+
+
+/* Hide scrollbar for horizontal scrolling */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth transitions for interactive elements */
+button, 
+.cursor-pointer {
+  transition: all 0.2s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active, 
+.cursor-pointer:active {
+  transform: scale(0.98);
+}
+
+/* iOS input fixes */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"] {
+  font-size: 16px; /* Prevents zoom on iOS Safari */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Better focus styles */
+input:focus {
+  outline: none;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure the app container keeps iPhone 13 Pro screen ratio */
+.app-frame {
+  width: 390px;        /* ✅ Use full width */
+  max-width: 390px;   /* ✅ Keep iPhone width */
+  height: 100vh;      /* ✅ Take full height */
+  max-height: 844px;  /* ✅ Keep iPhone height */
+  background: white;
+  border-radius: 32px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+}
+
+
+/* Make all text render smooth and avoid blurry weights */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensures white text on gradient cards ALWAYS stays white */
+.text-white-important {
+  color: #ffffff !important;
+}
+
+/* Bottom Navigation Styling */
+.bottom-nav {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 86%;
+  height: 64px;
+  background: white;
+  border-radius: 22px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  border: 1px solid #e4e4e4;
+  z-index: 999;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 11px;
+  color: #9ca3af;
+  cursor: pointer;
+  user-select: none;
+}
+
+.nav-item.active {
+  color: #0b74f1; /* highlight color */
+}

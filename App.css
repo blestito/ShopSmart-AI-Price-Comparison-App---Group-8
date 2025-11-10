@@ -1,0 +1,68 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Hide scrollbar for horizontal scrolling categories */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth transitions */
+button, .cursor-pointer {
+  transition: all 0.2s ease;
+}
+
+button:active, .cursor-pointer:active {
+  transform: scale(0.98);
+}
+
+/* Prevent text selection on buttons and clickable elements */
+button, .cursor-pointer {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Ensure proper font rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optional: Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove default input styles on mobile */
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Better focus styles for accessibility */
+input:focus, button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* iOS Safari fixes */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"] {
+  font-size: 16px; /* Prevents zoom on iOS */
+}
